@@ -129,16 +129,15 @@ contract RockPaperScissor{
         _finishGame();
     }
 
-    function _finishGame() private returns(bool){
+    function _finishGame() private{
         //matchs.push(Match(player1,playerMove[player1].move,player2,playerMove[player2].move,results[playerMove[player1].move][playerMove[player2].move],pool));
         _selectWinner();
         address payable _from = _winner;
-        //_reset();
+        _reset();
         if(_from != address(0))
             pay(_from);
         in_live = false;
-        return true;
-        //emit finish(_from);        
+        emit finish(_from);        
     }
 
     function _reset() private{
