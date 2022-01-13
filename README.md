@@ -4,7 +4,7 @@ Rock Paper Scissor
 
 ```shell
 npx hardhat node
-node scripts/sample-script.js
+node scripts/deploy.js
 ```
 
 or
